@@ -1,0 +1,92 @@
+/* Reset CSS */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Basic styles */
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    line-height: 1.5;
+    color: var(--text);
+    background: var(--back);
+    -webkit-text-size-adjust:100%;
+    word-wrap:break-word;
+}
+
+a{
+  padding:0;
+  font-size:100%;
+  vertical-align:baseline;
+  text-decoration-skip-ink:auto;
+  text-decoration:none;
+}
+
+header {
+    background: var(--sub);
+    position: sticky;
+    top: 0;
+    z-index: 1024;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    height: 48px;
+    align-items: center;
+    padding: 0 16px;
+}
+
+#wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 960px;
+    margin: 0 auto;
+    gap: 16px;
+    padding: 16px;
+}
+
+#main {
+    padding: 8px;
+}
+
+#side {
+    padding: 8px;
+}
+
+footer {
+    background: var(--sub);
+    text-align: center;
+    padding: 16px;
+}
+
+h1{
+    color: var(--main);
+    text-decoration:none;
+    margin-left:4px;
+}
+
+/* Responsive layout */
+@media screen and (min-width: 1024px) {
+    #wrapper {
+        grid-template-columns: 1fr 300px;
+        grid-column-gap: 16px;
+    }
+}
+
+/* CSS Variables */
+:root {
+    --main: #44EEFF;
+    --sub: #555555;
+    --text: black;
+    --back: white;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text: #DDDDDD;
+        --back: #010101;
+    }
+    #main, #side {
+        background: #333;
+    }
+}
